@@ -9,6 +9,7 @@ import router from './routes/usersRoutes.js';
 const app = express();
 const port = 3000;
 
+
 // * middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));

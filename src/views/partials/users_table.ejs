@@ -1,22 +1,48 @@
 <div class="container">
-  <h1 style="font-size: 30px; text-align: center;">USERS</h1>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= users[0].user_id%></td>
-        <td><%= users[0].user_name%></td>
-        <td><%= users[0].user_email%></td>
-        <td><%= users[0].user_phone%></td>
-      </tr>
-    </tbody>
-  </table>
+  <h1 class="text-center text-white">USERS</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-dark">
+      <thead>
+        <tr class="text-white">
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr class="text-white">
+            <td>
+              <%= user.user_id %>
+            </td>
+            <td>
+              <%= user.user_name %>
+            </td>
+            <td>
+              <%= user.user_email %>
+            </td>
+            <td>
+              <%= user.user_phone %>
+            </td>
+            <td>
+              <a href="/update/<%= user.user_id %>">
+                <button type="submit" class="pl btn btn-info">
+                    <i class='bx bx-edit'></i>
+                  </button>
+                </a>
+
+                <a href="/delete/<%= user.user_id %>">
+                  <button type="submit" class="pl btn btn-danger">
+                    <i class='bx bx-trash'></i>
+                  </button>
+                </a>
+            </td>
+          </tr>
+          <% }) %>
+         
+      </tbody>
+    </table>
+  </div>
 </div>
