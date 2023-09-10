@@ -1,15 +1,21 @@
-import { Router } from 'express';
+import { Router } from "express";
 
-import { userGet, userCreate, userDelete } from '../controllers/usersControllers.js';
+import {
+  userGet,
+  userCreate,
+  userDelete,
+  userGetUpdate,
+  userUpdate,
+  about,
+} from "../controllers/usersControllers.js";
 
 const router = Router();
 
-router.get("/", userGet)
-
+router.get("/", userGet);
 router.post("/add", userCreate);
-
-router.put;
-
+router.get("/update/:id", userGetUpdate);
+router.post("/updated/:id", userUpdate);
 router.get("/delete/:id", userDelete);
+router.get("/about", about);
 
 export default router;

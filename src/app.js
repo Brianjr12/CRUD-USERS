@@ -20,6 +20,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set("views", join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// *static files
+app.use(express.static(join(__dirname, "public")));
+
 // * running the server
 app.listen(port, () => { 
   console.log(`Server is listening on http://localhost:${port}`);

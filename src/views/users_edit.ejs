@@ -1,0 +1,29 @@
+<%- include("partials/_header") %>
+
+ 
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card bg-dark text-white shadow p-3 mb-5 rounded" style="max-width: 400px; width: 100%;">
+      <div class="card-body">
+        <form action="/updated/<%= users.user_id %>" method="post">
+          <div class="form-group mb-3">
+            <label for="enterName" class="pb-2">Edit your name</label>
+            <input type="text" name="name" value="<%= users.user_name %>" class="form-control custom-input bg-dark">
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="enterEmail" class="pb-2">Edit your email</label>
+            <input type="email" name="email" value="<%= users.user_email %>" class="form-control custom-input bg-dark">
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="enterPhone" class="pb-2">Edit your phone</label>
+            <input type="text" name="phone" value="<%= users.user_phone %>" class="form-control custom-input bg-dark">
+          </div>        
+          <button type="submit" class="btn btn-success">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <%- include("partials/_footer") %>
