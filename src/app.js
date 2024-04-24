@@ -4,11 +4,8 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import router from './routes/usersRoutes.js';
 
-
 // * settings
 const app = express();
-const port = 3000;
-
 
 // * middlewares
 app.use(morgan("dev"));
@@ -23,10 +20,7 @@ app.set("view engine", "ejs");
 // *static files
 app.use(express.static(join(__dirname, "public")));
 
-// * running the server
-app.listen(port, () => { 
-  console.log(`Server is listening on http://localhost:${port}`);
-})
-
 // * routes
 app.use(router);
+
+export default app
