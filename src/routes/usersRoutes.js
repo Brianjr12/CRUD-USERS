@@ -11,7 +11,7 @@ import {
 
 const router = Router();
 
-router.get("/", userGet);
+router.get("/home", userGet);
 router.post("/add", userCreate);
 router.get("/update/:id", userGetUpdate);
 router.post("/updated/:id", userUpdate);
